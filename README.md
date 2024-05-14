@@ -1,6 +1,6 @@
-# Metacrafters 
+# Smart Contract Management - ETH-AVAX - Metacrafters
 
-This project is a simple ATM  interface built with React and Ethereum. It allows users to deposit and withdraw Ether (ETH) using their MetaMask wallet.
+This project uses Ethereum and React to create a basic ATM interface. With their MetaMask wallet, users can deposit and withdraw Ether (ETH).
 
 ## Features
 
@@ -11,8 +11,12 @@ This project is a simple ATM  interface built with React and Ethereum. It allows
 ## Installation
 
 1. Clone the repository
-2. Install the dependencies with `npm install`
-3. Start the development server with `npm start`
+2. Inside the project directory, in the terminal type: npm i
+3. Open two additional terminals in your VS code
+4. In the second terminal type: npx hardhat node
+5. In the third terminal, type: npx hardhat run --network localhost scripts/deploy.js
+6. Back in the first terminal, type npm run dev to launch the front-end.
+After this, the project will be running on your localhost. Typically at http://localhost:3000/
 
 ## Usage
 
@@ -33,28 +37,26 @@ This project is a simple ATM  interface built with React and Ethereum. It allows
 
 ## Index
 
-The component maintains state variables for the user’s Ethereum wallet, account, ATM contract, and balance. 
-It provides functions to connect to the user’s MetaMask wallet, handle account changes, interact with the ATM contract, and update the balance.
-The deposit and withdraw functions allow the user to deposit and withdraw Ether from the ATM.
-The initUser function checks if the user has MetaMask installed and if the user’s account is connected.
-If not, it prompts the user to connect their MetaMask wallet.
+The part keeps track of state variables for the user's balance, ATM contract, Ethereum wallet, and account. It offers features to manage account modifications, communicate with the ATM contract, update the balance, and establish a connection to the user's MetaMask wallet. The user can deposit and withdraw Ethereum from the ATM using the deposit and withdraw features. The initUser function verifies if the user's account is linked and that MetaMask is installed on them. The user is prompted to join their MetaMask wallet if they don't already.
 
 ## Assessment
 
-This is a Solidity contract named Assessment that simulates a simple banking system. 
-It has an owner and a balance which are set during contract deployment. The contract emits Deposit and Withdraw events when respective transactions occur.
-The deposit function allows the contract owner to deposit a certain amount into the contract. 
-It checks if the sender is the owner, updates the balance, and emits a Deposit event.
+This Solidity contract, called Assessment, mimics a basic banking setup. 
+During contract deployment, its balance and owner are determined. When the corresponding transactions take place, the contract emits Deposit and Withdraw events.
+The contract owner can put money into the contract using the deposit mechanism. 
+It emits a Deposit event, updates the balance, and verifies that the sender is the owner.
+
 
 ## Deploy
 
-The main function is an asynchronous function that deploys the contract. It first sets an initial balance of 1. 
-Then, it gets a contract factory for the Assessment contract using Hardhat’s getContractFactory method. 
-The contract factory is used to deploy the contract with the initial balance.
-After the contract is deployed, the function waits for the deployment to be mined and confirmed, then logs the contract’s address and initial balance to the console.
+An asynchronous function that deploys the contract is the primary function. First, a starting balance of 1 is set. 
+Next, it uses Hardhat's getContractFactory function to obtain a contract factory for the Assessment contract. 
+The contract with the initial balance is deployed using the contract factory.
+Following deployment, the function logs the contract's address and starting balance to the console and waits for the deployment to be verified by mining.
+
 
 ## Authors 
-https://academy.metacrafters.io/profile
+Nathaniel John Quilao
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
